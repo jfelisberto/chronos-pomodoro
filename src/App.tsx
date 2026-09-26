@@ -1,6 +1,7 @@
 import { Container } from './components/Container';
-import { Logo } from './components/Logo';
 import { Heading } from './components/Heading';
+import { Logo } from './components/Logo';
+import { Menu } from './components/Menu';
 
 import './styles/theme.css';
 import './styles/global.css';
@@ -14,10 +15,12 @@ export function App() {
         </Container>
 
         <Container>
-          <Heading>MENU</Heading>
+          <Menu />
         </Container>
 
-        <Container>FORM</Container>
+        <Container>
+          <Heading>FORMULARIO</Heading>
+        </Container>
 
         <Container>
           <section>
@@ -27,7 +30,9 @@ export function App() {
           </section>
         </Container>
 
-        <Container>FOOTER</Container>
+        <Container>
+          <Heading>FOOTER</Heading>
+        </Container>
       </div>
     </>
   );
