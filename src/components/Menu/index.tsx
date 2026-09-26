@@ -1,21 +1,23 @@
 import styles from './styles.module.css';
-import { HouseIcon, RotateCcwClockIcon, SettingsIcon, SunIcon } from 'lucide-react';
 
-export function Menu() {
+type MenuItem = {
+  url: string;
+  icon: React.ReactNode;
+};
+
+type MenuProps = {
+  items: MenuItem[];
+};
+
+export function Menu({ items }: MenuProps) {
+  console.log(items);
   return (
     <nav className={styles.menu}>
-      <a href='#' className={styles.menuLink}>
-        <HouseIcon />
-      </a>
-      <a href='#' className={styles.menuLink}>
-        <RotateCcwClockIcon />
-      </a>
-      <a href='#' className={styles.menuLink}>
-        <SettingsIcon />
-      </a>
-      <a href='#' className={styles.menuLink}>
-        <SunIcon />
-      </a>
+      {items.map((menu, index) => (
+        <a key={index} href={menu.url} className={styles.menuLink}>
+          {menu.icon}
+        </a>
+      ))}
     </nav>
   );
 }
