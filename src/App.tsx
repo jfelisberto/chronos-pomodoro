@@ -8,6 +8,7 @@ import { Menu } from './components/Menu';
 import { HouseIcon, RotateCcwClockIcon, SettingsIcon, SunIcon } from 'lucide-react';
 import './styles/theme.css';
 import './styles/global.css';
+import { Form } from './components/Form';
 
 export function App() {
   interface MenuData {
@@ -50,11 +51,7 @@ export function App() {
         </Container>
 
         <Container>
-          <section>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos nam commodi, voluptatibus quisquam, velit
-            consequuntur ducimus facere soluta mollitia earum nisi, repellendus laborum! Consequuntur, molestiae
-            obcaecati sed atque tenetur asperiores?
-          </section>
+          <Form />
         </Container>
 
         <Container>
