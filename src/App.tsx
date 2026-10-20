@@ -9,6 +9,7 @@ import { HouseIcon, RotateCcwClockIcon, SettingsIcon, SunIcon } from 'lucide-rea
 import './styles/theme.css';
 import './styles/global.css';
 import { Form } from './components/Form';
+import { Footer } from './components/Footer';
 
 export function App() {
   interface MenuData {
@@ -55,7 +56,7 @@ export function App() {
         </Container>
 
         <Container>
-          <Heading>FOOTER</Heading>
+          <Footer />
         </Container>
       </div>
     </>
