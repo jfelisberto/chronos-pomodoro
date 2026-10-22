@@ -5,11 +5,13 @@ import { Heading } from './components/Heading';
 import { Logo } from './components/Logo';
 import { Menu } from './components/Menu';
 
-import { HouseIcon, RotateCcwClockIcon, SettingsIcon, SunIcon } from 'lucide-react';
+import { HouseIcon, PlusCircleIcon, RotateCcwClockIcon, SettingsIcon, SunIcon } from 'lucide-react';
 import './styles/theme.css';
 import './styles/global.css';
 import { Form } from './components/Form';
 import { Footer } from './components/Footer';
+import { Button } from './components/Form/Buttons';
+import { useState } from 'react';
 
 export function App() {
   interface MenuData {
@@ -36,9 +38,21 @@ export function App() {
     },
   ];
 
+  // Sempre que eu usar useState, não vou usar atribuição diretamente
+  const [numero, setNumero] = useState(() => {
+    console.log('Lazy initialization');
+    return 0;
+  });
+
+  function handleClick() {
+    setNumero(prevState => prevState + 1);
+  }
+
   return (
     <>
       <div className='container-fluid'>
+        <Heading>Numero: {numero}</Heading>
+        <Button icon={<PlusCircleIcon />} color='red' onClick={handleClick}></Button>
         <Container>
           <Logo />
         </Container>
@@ -52,7 +66,7 @@ export function App() {
         </Container>
 
         <Container>
-          <Form />
+          <Form numero={numero} />
         </Container>
 
         <Container>
